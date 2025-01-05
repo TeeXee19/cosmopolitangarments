@@ -32,7 +32,7 @@ const menuItems = ref([{
     },
     {
         name: 'Collection',
-        path: '/collection'
+        path: '/'
     },
     {
         name: 'About Us',
