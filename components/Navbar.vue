@@ -11,7 +11,7 @@
     }" class="flex items-center justify-between lg:justify-center flex-wrap max-w-full px-4 md:px-8">
       <!-- Logo -->
       <NuxtLink to="/" class="flex items-center flex-shrink-0 lg:w-[30%]">
-        <img src="../assets/images/logo.svg" class="h-[50px] md:h-[50px] w-auto" alt="logo" title="Go Home" />
+        <img src="/assets/images/logo.svg" class="h-[50px] md:h-[50px] w-auto" alt="logo" title="Go Home" />
       </NuxtLink>
 
       <!-- Mobile Menu Button -->
