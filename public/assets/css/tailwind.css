@@ -1,0 +1,7 @@
+/* styles/tailwind.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.cdnfonts.com/css/times-new-roman');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+
