@@ -21,7 +21,7 @@
       </div>
     </section>
   
-    <section class="bg-[url('/assets/images/second.svg')] bg-center bg-cover bg-no-repeat py-12 px-6 lg:px-[5%] mx-auto max-w-[1440px]">
+    <section class="bg-[url('/assets/images/second.svg')] bg-center bg-cover bg-no-repeat py-12 px-6 lg:px-[5%] mx-auto max-w-[1440px]   space-y-4">
       <div class="text-center space-y-4 mb-8">
         <h2 class="text-2xl md:text-4xl font-bold capitalize">New Collection</h2>
         <p class="text-gray-600 text-sm md:text-base lg:text-lg">
@@ -31,23 +31,71 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="relative group">
           <img src="/assets/images/singlets.svg" alt="Singlets" class="w-full h-auto object-cover rounded-lg shadow-md" />
-          <div class="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/50 to-transparent p-4">
-            <h3 class="text-white text-xl font-semibold">Singlets</h3>
+          <div class="absolute inset-0 flex items-end justify-center p-4">
+            <h3 class="text-xl font-semibold px-2 py-2 text-center bg-white text-black w-[60%]">Singlets</h3>
           </div>
         </div>
         <div class="relative group">
           <img src="/assets/images/m-boxers.svg" alt="Boxers" class="w-full h-auto object-cover rounded-lg shadow-md" />
-          <div class="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/50 to-transparent p-4">
-            <h3 class="text-white text-xl font-semibold">Boxer Briefs</h3>
+          <div class="absolute inset-0 flex items-end justify-center p-4">
+            <h3 class="text-xl font-semibold px-2 py-2 text-center bg-white text-black w-[60%]">Boxer Briefs</h3>
           </div>
         </div>
         <div class="relative group">
           <img src="/assets/images/boxer-shorts.svg" alt="Boxer Shorts" class="w-full h-auto object-cover rounded-lg shadow-md" />
-          <div class="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/50 to-transparent p-4">
-            <h3 class="text-white text-xl font-semibold">Boxer Shorts</h3>
+          <div class="absolute inset-0 flex items-end justify-center p-4">
+            <h3 class="text-xl font-semibold px-2 py-2 text-center bg-white text-black w-[60%]">Boxer Shorts</h3>
           </div>
         </div>
       </div>
+
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:py-[7%]  h-[inherit] items-center">
+        <div class="hidden md:block justify-items-end">
+            <img src="/assets/images/factory.svg" class="w-[70%]" />
+        </div>
+        <div class="ml-2 space-y-6">
+            <h3 class="capitalize text-black font-bold text-[30px] md:text-[60px] font-frl leading-[100%]">
+                About Cosmopolitan Garments
+            </h3>
+            <p class="font-ks text-[18px] md:w-[62%] text-left">
+                We are a group of people that is driven by the above-mentioned mission, vision, philosophy, and values. We are desirous of establishing a state of the art modern garment factory in Enugu that will employ about 4000 people and producing over 35,000 garments daily to ship across Africa and beyond.
+            </p>
+
+            <div class="relative z-20 md:-bottom-6 md:left-[-20%] bg-white shadow-xl p-4 md:p-6 rounded-lg flex justify-between md:w-[80%] space-x-8 mt-6">
+                <div class="md:text-center">
+                    <p class="text-black font-bold text[20px] md:text-[32px]">2022</p>
+                    <p class="text-gray-600">Founded</p>
+                </div>
+                <div class="md:text-center">
+                    <p class="text-black font-bold text[20px] md:text-[32px]">10M+</p>
+                    <p class="text-gray-600">Product Sold</p>
+                </div>
+                <div class="md:text-center">
+                    <p class="text-black font-bold text[20px] md:text-[32px]">5772+</p>
+                    <p class="text-gray-600">Best Reviews</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div>
+      <h3 class="font-ks font-bold text-[#007200] mb-3">Production Gallery</h3>
+      <div ref="carousel" class="overflow-x-auto whitespace-nowrap scrollbar-hide snap-x scroll-smooth">
+        <div
+          v-for="(image, index) in prod"
+          :key="index"
+          class="inline-block min-w-[200px] md:min-w-[300px] max-w-[70%] md:max-w-[40%] mx-2 text-black rounded-lg snap-center"
+        >
+          <img :src="image.src" :alt="image.title" class="w-full h-fit object-contain" />
+        </div>
+      </div>
+      <NuxtLink to="/gallary" class="bg-black px-4 py-2 border border-white rounded text-white transition flex flex-end w-fit">
+            SEE MORE
+      </NuxtLink>
+    </div>
     </section>
   
     <section class="bg-black text-white py-12 px-6 lg:px-[5%]">
@@ -167,7 +215,11 @@ const images = ref([{
         title: "Pastel Looks"
     },
 ]);
-
+const prod = ref([
+    { src: "/assets/images/prod-img-1.svg" },
+    { src: "/assets/images/prod-img-2.svg" },
+    { src: "/assets/images/prod-img-1.svg" },
+  ]);
 const activeDot = ref(0);
 
 const scrollTo = (index: number) => {
